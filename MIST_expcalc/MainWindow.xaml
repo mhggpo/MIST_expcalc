@@ -6,7 +6,7 @@
         xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
         xmlns:local="clr-namespace:MIST_expcalc"
         mc:Ignorable="d"
-        Title="经验计算器 ver 0.01" Height="514" Width="728" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="20180221040238918_easyicon_net_96.ico">
+        Title="经验计算器 ver 0.02" Height="514" Width="728" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="20180221040238918_easyicon_net_96.ico">
     <Grid Margin="0,0,-49,-68">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -61,6 +61,10 @@
             <ListBoxItem Content="5-2H"/>
             <ListBoxItem Content="5-3H"/>
             <ListBoxItem Content="5-4H"/>
+            <ListBoxItem Content="训练海域 Lv.10"/>
+            <ListBoxItem Content="训练海域 Lv.20"/>
+            <ListBoxItem Content="训练海域 Lv.40"/>
+            <ListBoxItem Content="训练海域 Lv.60"/>
             <ListBoxItem Content="自定义"/>
         </ComboBox>
         <Label x:Name="label_Copy3" Content="关卡选择" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="240,37.666,0,0" Width="70"/>

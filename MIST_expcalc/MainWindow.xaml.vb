@@ -14,7 +14,6 @@
     End Sub
 
     Private Sub type2_Checked(sender As Object, e As RoutedEventArgs) Handles type2.Checked
-        MsgBox("提督经验不受任何加成哦！ 0v0" & vbCrLf & "(当前版本提督等级上限为150级)", vbInformation, "昆昆提示")
         textBoxto.Text = "150"
     End Sub
 
@@ -292,10 +291,27 @@
                     onceexp = 187
                     oncecost = 27
                 Case 40
+                    stage = "训练海域 Lv.10"
+                    onceexp = 50
+                    oncecost = 1
+                Case 41
+                    stage = "训练海域 Lv.20"
+                    onceexp = 100
+                    oncecost = 1
+                Case 42
+                    stage = "训练海域 Lv.40"
+                    onceexp = 200
+                    oncecost = 1
+                Case 43
+                    stage = "训练海域 Lv.60"
+                    onceexp = 400
+                    oncecost = 1
+                Case 44
                     stage = "自定义"
+                    oncecost = 1
                     Dim temp1 As String
 Input1:
-                    temp1 = InputBox("请输入关卡基础经验(即A胜经验)", "昆昆提示")
+                    temp1 = InputBox("请输入关卡经验", "昆昆提示")
                     If temp1 = "" Then MsgBox("哼，居然想用空白的条件来忽悠昆西╭(╯^╰)╮，不可原谅！", vbInformation) : GoTo Input1
                     If temp1 = "0" Then MsgBox("昆昆才不会被骗去1-5吃土呢！", vbInformation) : GoTo Input1
                     onceexp = Val(temp1)
@@ -308,7 +324,13 @@ Input1:
             tempforke = onceexp
             times = needexp / onceexp
             elec = times * oncecost
-            MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
+            If level2 >= 40 And level2 <= 43 Then
+                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要深海抑制装置：" & elec, vbInformation, "昆昆提示")
+            ElseIf level2 = 44 Then
+                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times, vbInformation, "昆昆提示")
+            Else
+                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
+            End If
         Else
             tiduexp(0) = 0
             tiduexp(1) = 0
@@ -637,10 +659,27 @@ Input1:
                     onceexp = 27
                     oncecost = 27
                 Case 40
+                    stage = "训练海域 Lv.10"
+                    onceexp = 10
+                    oncecost = 1
+                Case 41
+                    stage = "训练海域 Lv.20"
+                    onceexp = 20
+                    oncecost = 1
+                Case 42
+                    stage = "训练海域 Lv.40"
+                    onceexp = 40
+                    oncecost = 1
+                Case 43
+                    stage = "训练海域 Lv.60"
+                    onceexp = 80
+                    oncecost = 1
+                Case 44
                     stage = "自定义"
+                    oncecost = 1
                     Dim temp1 As String
 Input3:
-                    temp1 = InputBox("请输入关卡基础经验(即SS胜经验)", "昆昆提示")
+                    temp1 = InputBox("请输入关卡经验", "昆昆提示")
                     If temp1 = "" Then MsgBox("哼，居然想用空白的条件来忽悠昆西╭(╯^╰)╮，不可原谅！", vbInformation) : GoTo Input3
                     If temp1 = "0" Then MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation) : GoTo Input3
                     onceexp = Val(temp1)
@@ -649,11 +688,13 @@ Input3:
             expfrom = tiduexp(CInt(textBoxfrom.Text))
             expto = tiduexp(CInt(textBoxto.Text))
             needexp = expto - expfrom
-            If onceexp = 0 Then
-                MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation, "昆昆提示")
+            times = needexp / onceexp
+            elec = times * oncecost
+            If level2 >= 40 And level2 <= 43 Then
+                MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要深海抑制装置：" & elec, vbInformation, "昆昆提示")
+            ElseIf level2 = 44 Then
+                MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times, vbInformation, "昆昆提示")
             Else
-                times = needexp / onceexp
-                elec = times * oncecost
                 MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
             End If
         End If
