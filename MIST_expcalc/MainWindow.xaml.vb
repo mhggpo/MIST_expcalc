@@ -316,6 +316,38 @@ Input1:
                     If temp1 = "0" Then MsgBox("昆昆才不会被骗去1-5吃土呢！", vbInformation) : GoTo Input1
                     onceexp = Val(temp1)
                     If onceexp = 0 Then MsgBox("昆昆才不会被骗去1-5吃土呢！", vbInformation) : GoTo Input1
+                Case 45
+                    stage = "6-1N"
+                    onceexp = 144
+                    oncecost = 24
+                Case 46
+                    stage = "6-2N"
+                    onceexp = 148
+                    oncecost = 24
+                Case 47
+                    stage = "6-3N"
+                    onceexp = 153
+                    oncecost = 24
+                Case 48
+                    stage = "6-4N"
+                    onceexp = 176
+                    oncecost = 26
+                Case 49
+                    stage = "6-1H"
+                    onceexp = 201
+                    oncecost = 28
+                Case 50
+                    stage = "6-2H"
+                    onceexp = 208
+                    oncecost = 28
+                Case 51
+                    stage = "6-3H"
+                    onceexp = 215
+                    oncecost = 28
+                Case 52
+                    stage = "6-4H"
+                    onceexp = 244
+                    oncecost = 30
             End Select
             expfrom = jianniangexp(CInt(textBoxfrom.Text))
             expto = jianniangexp(CInt(textBoxto.Text))
@@ -684,6 +716,38 @@ Input3:
                     If temp1 = "0" Then MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation) : GoTo Input3
                     onceexp = Val(temp1)
                     If onceexp = 0 Then MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation) : GoTo Input3
+                Case 45
+                    stage = "6-1N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 46
+                    stage = "6-2N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 47
+                    stage = "6-3N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 48
+                    stage = "6-4N"
+                    onceexp = 26
+                    oncecost = 26
+                Case 49
+                    stage = "6-1H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 50
+                    stage = "6-2H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 51
+                    stage = "6-3H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 52
+                    stage = "6-4H"
+                    onceexp = 30
+                    oncecost = 30
             End Select
             expfrom = tiduexp(CInt(textBoxfrom.Text))
             expto = tiduexp(CInt(textBoxto.Text))
