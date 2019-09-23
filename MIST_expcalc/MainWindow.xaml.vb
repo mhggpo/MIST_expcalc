@@ -1,7 +1,7 @@
 ﻿Class MainWindow
-    Dim expfrom, expto, needexp, onceexp, oncecost, onceexp1, onceexp2 As Long
+    Dim expfrom, expto, expall, needexp, onceexp, oncecost, onceexp1, onceexp2 As Long
     Dim times, elec As Integer
-    Dim jianniangexp(81) As Long
+    Dim jianniangexp(91) As Long
     Dim tiduexp(151) As Long
 
     Private Sub button3_Click(sender As Object, e As RoutedEventArgs) Handles button3.Click
@@ -10,7 +10,7 @@
     End Sub
 
     Private Sub type1_Checked(sender As Object, e As RoutedEventArgs) Handles type1.Checked
-        textBoxto.Text = "80"
+        textBoxto.Text = "90"
     End Sub
 
     Private Sub type2_Checked(sender As Object, e As RoutedEventArgs) Handles type2.Checked
@@ -28,8 +28,11 @@
 
 
 
-
-
+    Public Sub setupexp(ByVal str1 As String, ByVal num1 As Long, ByVal num2 As Long)
+        stage = str1
+        onceexp = num1
+        oncecost = num2
+    End Sub
 
 
     Private Sub button_Click(sender As Object, e As RoutedEventArgs) Handles button.Click
@@ -114,26 +117,34 @@
             jianniangexp(77) = 413341
             jianniangexp(78) = 443178
             jianniangexp(79) = 474714
-            jianniangexp(80) = 507951
+            jianniangexp(80) = 507950
+            jianniangexp(81) = 542887
+            jianniangexp(82) = 580374
+            jianniangexp(83) = 620410
+            jianniangexp(84) = 662997
+            jianniangexp(85) = 708133
+            jianniangexp(86) = 755820
+            jianniangexp(87) = 806056
+            jianniangexp(88) = 858843
+            jianniangexp(89) = 914179
+            jianniangexp(90) = 972066
             If Val(textBoxfrom.Text) >= 1 And Val(textBoxfrom.Text) <= Val(textBoxto.Text) Then
             Else
                 MsgBox(“输入有误，请重新输入！”, vbInformation)
                 textBoxfrom.Text = 1
                 Exit Sub
             End If
-            If Val(textBoxto.Text) <= 80 And Val(textBoxfrom.Text) <= Val(textBoxto.Text) Then
+            If Val(textBoxto.Text) <= 90 And Val(textBoxfrom.Text) <= Val(textBoxto.Text) Then
             Else
                 MsgBox(“输入有误，请重新输入！”, vbInformation)
-                textBoxto.Text = 80
+                textBoxto.Text = 90
                 Exit Sub
             End If
             Dim level2 As Integer
             level2 = comboBox.SelectedIndex
             Select Case level2
                 Case 0
-                    stage = "1-1N"
-                    onceexp = 12
-                    oncecost = 8
+                    setupexp("1-1N", 12, 8)
                 Case 1
                     stage = "1-2N"
                     onceexp = 12
@@ -211,102 +222,134 @@
                     onceexp = 133
                     oncecost = 23
                 Case 20
+                    stage = "6-1N"
+                    onceexp = 144
+                    oncecost = 24
+                Case 21
+                    stage = "6-2N"
+                    onceexp = 148
+                    oncecost = 24
+                Case 22
+                    stage = "6-3N"
+                    onceexp = 153
+                    oncecost = 24
+                Case 23
+                    stage = "6-4N"
+                    onceexp = 176
+                    oncecost = 26
+                Case 24
                     stage = "1-1H"
                     onceexp = 21
                     oncecost = 12
-                Case 21
+                Case 25
                     stage = "1-2H"
                     onceexp = 23
                     oncecost = 12
-                Case 22
+                Case 26
                     stage = "1-3H"
                     onceexp = 24
                     oncecost = 12
-                Case 23
+                Case 27
                     stage = "1-4H"
                     onceexp = 30
                     oncecost = 14
-                Case 24
+                Case 28
                     stage = "2-1H"
                     onceexp = 38
                     oncecost = 16
-                Case 25
+                Case 29
                     stage = "2-2H"
                     onceexp = 42
                     oncecost = 16
-                Case 26
+                Case 30
                     stage = "2-3H"
                     onceexp = 46
                     oncecost = 16
-                Case 27
+                Case 31
                     stage = "2-4H"
                     onceexp = 60
                     oncecost = 18
-                Case 28
+                Case 32
                     stage = "3-1H"
                     onceexp = 72
                     oncecost = 20
-                Case 29
+                Case 33
                     stage = "3-2H"
                     onceexp = 76
                     oncecost = 20
-                Case 30
+                Case 34
                     stage = "3-3H"
                     onceexp = 81
                     oncecost = 20
-                Case 31
+                Case 35
                     stage = "3-4H"
                     onceexp = 100
                     oncecost = 22
-                Case 32
+                Case 36
                     stage = "4-1H"
                     onceexp = 115
                     oncecost = 24
-                Case 33
+                Case 37
                     stage = "4-2H"
                     onceexp = 120
                     oncecost = 24
-                Case 34
+                Case 38
                     stage = "4-3H"
                     onceexp = 126
                     oncecost = 24
-                Case 35
+                Case 39
                     stage = "4-4H"
                     onceexp = 149
                     oncecost = 26
-                Case 36
+                Case 40
                     stage = "5-1H"
                     onceexp = 156
                     oncecost = 26
-                Case 37
+                Case 41
                     stage = "5-2H"
                     onceexp = 162
                     oncecost = 26
-                Case 38
+                Case 42
                     stage = "5-3H"
                     onceexp = 168
                     oncecost = 26
-                Case 39
+                Case 43
                     stage = "5-4H"
                     onceexp = 187
                     oncecost = 27
-                Case 40
+                Case 44
+                    stage = "6-1H"
+                    onceexp = 201
+                    oncecost = 28
+                Case 45
+                    stage = "6-2H"
+                    onceexp = 208
+                    oncecost = 28
+                Case 46
+                    stage = "6-3H"
+                    onceexp = 215
+                    oncecost = 28
+                Case 47
+                    stage = "6-4H"
+                    onceexp = 244
+                    oncecost = 30
+                Case 48
                     stage = "训练海域 Lv.10"
                     onceexp = 50
                     oncecost = 1
-                Case 41
+                Case 49
                     stage = "训练海域 Lv.20"
                     onceexp = 100
                     oncecost = 1
-                Case 42
+                Case 50
                     stage = "训练海域 Lv.40"
                     onceexp = 200
                     oncecost = 1
-                Case 43
+                Case 51
                     stage = "训练海域 Lv.60"
                     onceexp = 400
                     oncecost = 1
-                Case 44
+                Case 52
                     stage = "自定义"
                     oncecost = 1
                     Dim temp1 As String
@@ -316,55 +359,29 @@ Input1:
                     If temp1 = "0" Then MsgBox("昆昆才不会被骗去1-5吃土呢！", vbInformation) : GoTo Input1
                     onceexp = Val(temp1)
                     If onceexp = 0 Then MsgBox("昆昆才不会被骗去1-5吃土呢！", vbInformation) : GoTo Input1
-                Case 45
-                    stage = "6-1N"
-                    onceexp = 144
-                    oncecost = 24
-                Case 46
-                    stage = "6-2N"
-                    onceexp = 148
-                    oncecost = 24
-                Case 47
-                    stage = "6-3N"
-                    onceexp = 153
-                    oncecost = 24
-                Case 48
-                    stage = "6-4N"
-                    onceexp = 176
-                    oncecost = 26
-                Case 49
-                    stage = "6-1H"
-                    onceexp = 201
-                    oncecost = 28
-                Case 50
-                    stage = "6-2H"
-                    onceexp = 208
-                    oncecost = 28
-                Case 51
-                    stage = "6-3H"
-                    onceexp = 215
-                    oncecost = 28
-                Case 52
-                    stage = "6-4H"
-                    onceexp = 244
-                    oncecost = 30
             End Select
             expfrom = jianniangexp(CInt(textBoxfrom.Text))
             expto = jianniangexp(CInt(textBoxto.Text))
-            needexp = expto - expfrom
-            Dim tempforke As Long
-            tempforke = onceexp
-            times = needexp / onceexp
-            elec = times * oncecost
-            If level2 >= 40 And level2 <= 43 Then
-                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要深海抑制装置：" & elec, vbInformation, "昆昆提示")
-            ElseIf level2 = 44 Then
-                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times, vbInformation, "昆昆提示")
+            If (addexp.IsChecked = True) Then
+                expall = 1600 * Val(expa.Text) + 400 * Val(expb.Text) + 100 * Val(expc.Text)
             Else
-                MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
+                expall = 0
             End If
-        Else
-            tiduexp(0) = 0
+            needexp = expto - expfrom - expall
+            Dim tempforke As Long
+                tempforke = onceexp
+            times = needexp / onceexp
+            If times = 0 Then times = times + 1
+            elec = times * oncecost
+            If level2 >= 48 And level2 <= 51 Then
+                    MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要深海抑制装置：" & elec, vbInformation, "昆昆提示")
+                ElseIf level2 = 52 Then
+                    MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times, vbInformation, "昆昆提示")
+                Else
+                    MsgBox("充满智慧的昆西掐指一算：" & "舰娘由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
+                End If
+            Else
+                tiduexp(0) = 0
             tiduexp(1) = 0
             tiduexp(2) = 10
             tiduexp(3) = 30
@@ -611,102 +628,134 @@ Input1:
                     onceexp = 23
                     oncecost = 23
                 Case 20
+                    stage = "6-1N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 21
+                    stage = "6-2N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 22
+                    stage = "6-3N"
+                    onceexp = 24
+                    oncecost = 24
+                Case 23
+                    stage = "6-4N"
+                    onceexp = 26
+                    oncecost = 26
+                Case 24
                     stage = "1-1H"
                     onceexp = 12
                     oncecost = 12
-                Case 21
+                Case 25
                     stage = "1-2H"
                     onceexp = 12
                     oncecost = 12
-                Case 22
+                Case 26
                     stage = "1-3H"
                     onceexp = 12
                     oncecost = 12
-                Case 23
+                Case 27
                     stage = "1-4H"
                     onceexp = 14
                     oncecost = 14
-                Case 24
+                Case 28
                     stage = "2-1H"
                     onceexp = 16
                     oncecost = 16
-                Case 25
+                Case 29
                     stage = "2-2H"
                     onceexp = 16
                     oncecost = 16
-                Case 26
+                Case 30
                     stage = "2-3H"
                     onceexp = 16
                     oncecost = 16
-                Case 27
+                Case 31
                     stage = "2-4H"
                     onceexp = 18
                     oncecost = 18
-                Case 28
+                Case 32
                     stage = "3-1H"
                     onceexp = 20
                     oncecost = 20
-                Case 29
+                Case 33
                     stage = "3-2H"
                     onceexp = 20
                     oncecost = 20
-                Case 30
+                Case 34
                     stage = "3-3H"
                     onceexp = 20
                     oncecost = 20
-                Case 31
+                Case 35
                     stage = "3-4H"
                     onceexp = 22
                     oncecost = 22
-                Case 32
+                Case 36
                     stage = "4-1H"
                     onceexp = 24
                     oncecost = 24
-                Case 33
+                Case 37
                     stage = "4-2H"
                     onceexp = 24
                     oncecost = 24
-                Case 34
+                Case 38
                     stage = "4-3H"
                     onceexp = 24
                     oncecost = 24
-                Case 35
+                Case 39
                     stage = "4-4H"
                     onceexp = 26
                     oncecost = 26
-                Case 36
+                Case 40
                     stage = "5-1H"
                     onceexp = 26
                     oncecost = 26
-                Case 37
+                Case 41
                     stage = "5-2H"
                     onceexp = 162
                     oncecost = 26
-                Case 38
+                Case 42
                     stage = "5-3H"
                     onceexp = 26
                     oncecost = 26
-                Case 39
+                Case 43
                     stage = "5-4H"
                     onceexp = 27
                     oncecost = 27
-                Case 40
+                Case 44
+                    stage = "6-1H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 45
+                    stage = "6-2H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 46
+                    stage = "6-3H"
+                    onceexp = 28
+                    oncecost = 28
+                Case 47
+                    stage = "6-4H"
+                    onceexp = 30
+                    oncecost = 30
+                Case 48
                     stage = "训练海域 Lv.10"
                     onceexp = 10
                     oncecost = 1
-                Case 41
+                Case 49
                     stage = "训练海域 Lv.20"
                     onceexp = 20
                     oncecost = 1
-                Case 42
+                Case 50
                     stage = "训练海域 Lv.40"
                     onceexp = 40
                     oncecost = 1
-                Case 43
+                Case 51
                     stage = "训练海域 Lv.60"
                     onceexp = 80
                     oncecost = 1
-                Case 44
+                Case 52
                     stage = "自定义"
                     oncecost = 1
                     Dim temp1 As String
@@ -716,47 +765,16 @@ Input3:
                     If temp1 = "0" Then MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation) : GoTo Input3
                     onceexp = Val(temp1)
                     If onceexp = 0 Then MsgBox("这样的条件下是没有提督经验的哦(⊙o⊙)", vbInformation) : GoTo Input3
-                Case 45
-                    stage = "6-1N"
-                    onceexp = 24
-                    oncecost = 24
-                Case 46
-                    stage = "6-2N"
-                    onceexp = 24
-                    oncecost = 24
-                Case 47
-                    stage = "6-3N"
-                    onceexp = 24
-                    oncecost = 24
-                Case 48
-                    stage = "6-4N"
-                    onceexp = 26
-                    oncecost = 26
-                Case 49
-                    stage = "6-1H"
-                    onceexp = 28
-                    oncecost = 28
-                Case 50
-                    stage = "6-2H"
-                    onceexp = 28
-                    oncecost = 28
-                Case 51
-                    stage = "6-3H"
-                    onceexp = 28
-                    oncecost = 28
-                Case 52
-                    stage = "6-4H"
-                    onceexp = 30
-                    oncecost = 30
             End Select
             expfrom = tiduexp(CInt(textBoxfrom.Text))
             expto = tiduexp(CInt(textBoxto.Text))
             needexp = expto - expfrom
             times = needexp / onceexp
+            If times = 0 Then times = times + 1
             elec = times * oncecost
-            If level2 >= 40 And level2 <= 43 Then
+            If level2 >= 48 And level2 <= 51 Then
                 MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要深海抑制装置：" & elec, vbInformation, "昆昆提示")
-            ElseIf level2 = 44 Then
+            ElseIf level2 = 52 Then
                 MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times, vbInformation, "昆昆提示")
             Else
                 MsgBox("充满智慧的昆西掐指一算：" & "提督由等级" & textBoxfrom.Text & "升级至" & textBoxto.Text & "，共需经验值" & needexp & vbCrLf & "刷" & stage & "关卡的单个节点" & vbCrLf & "一次经验" & onceexp & "，需要次数：" & times & " 需要电：" & elec, vbInformation, "昆昆提示")
