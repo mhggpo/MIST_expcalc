@@ -6,14 +6,14 @@
         xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
         xmlns:local="clr-namespace:MIST_expcalc"
         mc:Ignorable="d"
-        Title="经验计算器 ver 0.04" Height="514" Width="728" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="20180221040238918_easyicon_net_96.ico">
+        Title="经验计算器 ver 0.05" Height="514" Width="728" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="20180221040238918_easyicon_net_96.ico">
     <Grid Margin="0,0,-49,-68">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <GroupBox x:Name="groupBox4" Header="计算条件" HorizontalAlignment="Left" Height="84" Margin="55,10,0,0" VerticalAlignment="Top" Width="386"/>
         <TextBox x:Name="textBoxfrom" HorizontalAlignment="Left" Height="23" Margin="88,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="38" Text="1" InputMethod.IsInputMethodEnabled="False"/>
-        <TextBox x:Name="textBoxto" HorizontalAlignment="Left" Height="23" Margin="176,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="80" InputMethod.IsInputMethodEnabled="False"/>
+        <TextBox x:Name="textBoxto" HorizontalAlignment="Left" Height="23" Margin="176,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="44" Text="90" InputMethod.IsInputMethodEnabled="False"/>
         <Label x:Name="label" Content="从" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="66,64,0,0"/>
         <Label x:Name="label_Copy" Content="到" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="149,64,0,0"/>
         <Button x:Name="button" Content="计算" HorizontalAlignment="Left" Height="146" Margin="370,126,0,0" VerticalAlignment="Top" Width="276" FontSize="36" Background="#FF66CCFF"/>
@@ -45,6 +45,10 @@
             <ListBoxItem Content="6-2N"/>
             <ListBoxItem Content="6-3N"/>
             <ListBoxItem Content="6-4N"/>
+            <ListBoxItem Content="7-1N"/>
+            <ListBoxItem Content="7-2N"/>
+            <ListBoxItem Content="7-3N"/>
+            <ListBoxItem Content="7-4N"/>
             <ListBoxItem Content="1-1H"/>
             <ListBoxItem Content="1-2H"/>
             <ListBoxItem Content="1-3H"/>
@@ -69,6 +73,10 @@
             <ListBoxItem Content="6-2H"/>
             <ListBoxItem Content="6-3H"/>
             <ListBoxItem Content="6-4H"/>
+            <ListBoxItem Content="7-1H"/>
+            <ListBoxItem Content="7-2H"/>
+            <ListBoxItem Content="7-3H"/>
+            <ListBoxItem Content="7-4H"/>
             <ListBoxItem Content="训练海域 Lv.10"/>
             <ListBoxItem Content="训练海域 Lv.20"/>
             <ListBoxItem Content="训练海域 Lv.40"/>
